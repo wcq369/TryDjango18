@@ -1,3 +1,13 @@
+{% extends "base.html" %}
+
+{% block head_title %}Welcome | {{ block.super }} {% endblock %}
+
+{% block jumbotron %}
+{{ block.super }}
+Hi
+{% endblock %}
+
+{% block content %}
 <h1>{{ title }}</h1>
 
 <form method='POST' action=''> {% csrf_token %}
@@ -6,3 +16,4 @@
 <input type='submit' value='Sign Up'>
 
 </form>
+{% endblock %}
