@@ -1,19 +1,47 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block head_title %}Welcome | {{ block.super }} {% endblock %}
 
-{% block jumbotron %}
-{{ block.super }}
-Hi
+<style>
+{% block style %}
+{% endblock %}
+</style>
+
+{% block jumbotron_content %}
+<div class="row">
+	<div class='col-xs-6'>
+	<h1>Try Django 1.8</h1>
+	<p>This is soly for learning purpose</p>
+	<p>
+	  <a class="btn btn-lg btn-primary" href="" role="button">Join us &raquo;</a>
+	</p>
+	</div>
+	<div class='col-sm-6' style="background-color:black;height:200px;">
+	</div>
+</div>
 {% endblock %}
 
 {% block content %}
-<h1>{{ title }}</h1>
+<div class="row">
+  <div class="col-xs-3 pull-right">
+		<p class>{{ title }}</p>
 
-<form method='POST' action=''> {% csrf_token %}
-<!-- <input type='text'> -->
-{{ form.as_p }}
-<input type='submit' value='Sign Up'>
+		<form method='POST' action=''> {% csrf_token %}
+		<!-- <input type='text'> -->
+		{{ form|crispy }}
+		<input class='btn btn-primary' type='submit' value='Sign Up'>
 
-</form>
+		</form>
+  </div>
+	<div class='col-sm-3'>
+	<p class='text-align-center'>Built with Django &amp; Bootstrap</p>
+	</div>
+	<div class='col-sm-3'>
+	<p class='text-align-center'>Second awesome</p>
+	</div>
+	<div class='col-sm-3'>
+	<p class='text-align-center'>Third column</p>
+	</div>
+</div>
 {% endblock %}

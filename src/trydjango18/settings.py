@@ -36,12 +36,16 @@ EMAIL_USE_TLS = True
 # Application definition
 
 INSTALLED_APPS = (
+    #django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #third party apps
+    'crispy_forms',
+    #my apps
     'newsletter',
 )
 
@@ -114,3 +118,5 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_root")
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
