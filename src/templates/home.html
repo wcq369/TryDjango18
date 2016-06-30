@@ -1,15 +1,25 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load staticfiles %}
 
 {% block head_title %}Welcome | {{ block.super }} {% endblock %}
 
 <style>
 {% block style %}
+
+.navbar-static-top {
+	margin-bottom: 0px !important;
+}
+.jumbotron {
+	background-color:#0E3F14;;
+	color: white;
+}
 {% endblock %}
 </style>
 
 {% block jumbotron %}
 <div class="jumbotron">
+            <div class="container">
 	<div class="row">
 		<div class='col-xs-6'>
 		<h1>Try Django 1.8</h1>
@@ -18,9 +28,11 @@
 		  <a class="btn btn-lg btn-primary" href="" role="button">Join us &raquo;</a>
 		</p>
 		</div>
-		<div class='col-sm-6' style="background-color:black;height:200px;">
+		<div class='col-sm-6'>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/RoKeSWzZAwA" frameborder="0" allowfullscreen></iframe>
 		</div>
 	</div>
+</div>
 </div>
 {% endblock %}
 
@@ -38,6 +50,7 @@
   </div>
 	<div class='col-sm-3'>
 	<p class='text-align-center'>Built with Django &amp; Bootstrap</p>
+	<img src='{% static "img/flight1.jpg" %}' class='img-responsive' />
 	</div>
 	<div class='col-sm-3'>
 	<p class='text-align-center'>Second awesome</p>
