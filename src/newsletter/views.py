@@ -5,6 +5,7 @@ from django.shortcuts import render
 # Create your views here.
 
 from .forms import ContactForm, SignUpForm
+from .models import SignUp
 
 def home(request):
 	title = "Welcome"
@@ -26,6 +27,12 @@ def home(request):
 
 		context = {
 			"title": "Thank you",
+		}
+
+	if request.user.is_authenticated() and request.user.is_staff:
+		queryset = SignUp.objects.all().order_by('-timestamp')
+		context = {
+			"queryset": queryset
 		}
 
 	return render(request, "home.html", context)
